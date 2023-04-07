@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}
+    재고 현황
+{% endblock %}
+{% block content %}
+    <div class="inventory_title">
+        <h5> 재고 현황</h5>
+    </div>
+    <table>
+        <tr>
+            <th>종류</th>
+            <th>코드</th>
+            <th>상품명</th>
+            <th>사이즈</th>
+            <th>가격 (단위:원)</th>
+            <th>재고량</th>
+            <th>설명</th>
+            <th>입고 날짜</th>
+            <th>출고 날짜</th>
+        </tr>
+        {% for pro in product_list %}
+            <tr>
+                <td>{{ pro.product_type }}</td>
+                <td>{{ pro.product_code }}</td>
+                <td>{{ pro.product_name }}</td>
+                <td>{{ pro.product_size }}</td>
+                <td>{{ pro.product_price }}</td>
+                <td>{{ pro.product_quantity }}</td>
+                <td>{{ pro.product_desc }}</td>
+                <td>{{ inbound_date }}</td>
+                <td>{{ outbound_date }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <p>* 후드 HD. 청바지 JN. 양말 SO. 모자 HT.</p>
+{% endblock %}
