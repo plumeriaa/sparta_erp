@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 # SIGN UP
 def sign_up_view(request):
     if request.method == 'GET':
-        user = request.user.is_authenticated # 로그인 여부 검증
+        user = request.user.is_authenticated
         if user:
             return redirect('/')
         else:
